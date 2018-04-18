@@ -1,0 +1,53 @@
+
+
+
+/* Vertical center for a row */
+.vert-align {
+    vertical-align: middle;
+
+}
+
+.hidden{
+    display:none;
+}
+
+.error-on{
+    color: #DE5145;
+}
+
+
+#coursedescription{
+    background-color: blue;
+}
+
+
+.big-container {
+    border: 3px blue solid;
+
+}
+
+.the-big-box {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+#nav-logo{
+/* TODO ALIGN THE LOGO
+ */    margin-top: 0px;
+    height: 50px;
+    width: auto;
+    padding-top: 0px;
+}
+
+.courseblock{
+    border: 1px blue solid;
+    margin: auto 10px;
+}
+
+
+
+/* ONE COURSE VIEW */
+
+.courseid{
+    width: 40px;
+}
