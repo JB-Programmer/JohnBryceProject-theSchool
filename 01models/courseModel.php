@@ -49,29 +49,56 @@ class CourseClass extends Conexion{
 
         return $selectedCourse;
 
-        $thecourse->closeCursor();
+        //$thecourse->closeCursor();
+
+    }
+
+ 
+    public function getStudentsOfThisCourse($courseId){
+
+
+
+        $query = "SELECT * FROM COURSESANDSTUDENTS WHERE COURSEID = $courseId";
+
+/*      With the method prepare that receive the sql, we will 
+        receive a pdo statement object, that I will save in $result */
+        $resultado = $this->base->prepare($query);
+        /* Now I execute that object with the ? inside. This array is built
+        automatically with the parameters in the order of the ??? I inserted*/
+        $resultado->execute(array());
+        //Example with markers PARA EL PROYECTO SI USE MARCADORES$resultado->execute(array(':seccion'=>$seccion, ':pais'=>$pais));
+        $arrayOfIdsStudent = [];
+
+        //I want to save the result in a array and return it without showing it
+        while($registro = $resultado->fetch(PDO::FETCH_ASSOC)){
+           
+           $arrayOfIdsStudent[]=$registro['studentId'];
+               
+        }
+
+    
+        $dataOfStudentsInCourse = $this->getAllDataOfStudentsOfThisCourse($arrayOfIdsStudent);
+
+       
+        return $dataOfStudentsInCourse;
+
 
     }
 
 
-    public function getStudentsOfThisCourse($idtoshow){
-
-        $studentsInThisCourse = "SELECT * FROM COURSES-STUDENTS WHERE courseId=$idtoshow";
+    function getAllDataOfStudentsOfThisCourse($arrayOfId) {
         
-        $thestudents = $this->base->prepare($studentsInThisCourse);
-        
-        $thestudents->execute(array());
-        
-        $arrayStudentsThisCourse = $thestudents->fetchAll(PDO::FETCH_ASSOC);
-        
-        $studentsInCourse =[];
-        foreach ($arrayStudentsThisCourse as $row=>$column){
+        $fullStudentsDataOnThisCourse = [];
+        for($i=0; $i<count($arrayOfId); $i++){
             
-            $studentsInCourse[] = $column['studentId']; 
-            //AQUI LO QUE QUIERO ES CAPTURAR TODOS LOS ID DE LOS ESTUDIANTES Y DEVOLVER DATOS.
-            
-        }    
-
+                $query = "SELECT studentname, studentimage FROM STUDENTS WHERE IDSTUDENT = $arrayOfId[$i]";
+                $resultado = $this->base->prepare($query);
+                $resultado->execute();
+                $studentToShow = $resultado->fetch();
+                $fullStudentsDataOnThisCourse[] = $studentToShow;
+        }
+        return $fullStudentsDataOnThisCourse;
+    
     }
 
 
@@ -83,12 +110,6 @@ class CourseClass extends Conexion{
     }
 
     
-}
-
-if(isset($_GET['Activate'])){
-    if ($_GET['Activate']==1){
-        echo "Hello!!!!!!!!!!!!";
-    }
 }
 
 

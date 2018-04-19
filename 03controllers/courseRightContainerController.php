@@ -7,8 +7,17 @@
         //Click on a course on right menu, it is the first step to make something with an EXISTING course
         if(isset($_GET['idcoursetoshow'])){
             $idcoursetoshow = $_GET['idcoursetoshow'];
-            include_once '../02views/courseone.php';
+
+            //To Access to the Course Data
+            include_once '../01models/courseModel.php';
+            $conexionToGetOneCourse = new CourseClass();
+
+            //Execute the query to the Course Table
+            $thecoursetoview = $conexionToGetOneCourse->get_onecourse($idcoursetoshow);
             
+            //Get Students on Course
+            $studentsOnThisCourse = $conexionToGetOneCourse->getStudentsOfThisCourse($idcoursetoshow);
+            include_once '../02views/courseone.php';
         //Updating a course
         } elseif(isset($_GET['editcourse'])){
             //HacerUnaOperacionEnInclude;

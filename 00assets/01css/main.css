@@ -51,3 +51,18 @@
 .courseid{
     width: 40px;
 }
+
+.bold{
+    font-weight: 600;
+}
+
+.maxwith50{
+    max-width: 50px;
+}
+
+
+/* TODO CLASSES */
+
+.studentname{
+   /*  Es la clase de los alumnos que figuran en un determinado curso */
+}

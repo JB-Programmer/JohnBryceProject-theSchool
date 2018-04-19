@@ -47,6 +47,7 @@ class TeamTable extends Conexion{
                     $_SESSION['userconnected']['email'] = $this->row['email'];
                     $_SESSION['userconnected']['role'] = $this->row["Role"];
                     $_SESSION['userconnected']['phone'] = $this->row['Phone'];
+                    $_SESSION['userconnected']['imgsrc'] = $this->row['imgsrc'];
                     $_SESSION['activecourse']==0;   
 
                     $this->loginOK = 1;
