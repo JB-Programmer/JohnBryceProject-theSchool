@@ -1,15 +1,15 @@
 <?php
 
-    //With session start we recover the data of the superglobal Variable $_SESSION.
+
     session_start();
 
     //I want to avoid direct writing of the url
     if(!isset($_SESSION['userconnected'])){
         header('location:login.php');
     }
+    include_once('../03controllers/rolecontroller.php');
 
     include_once('header.php');
-    include_once('../03controllers/rolecontroller.php');
 
     ?>
 
@@ -17,26 +17,30 @@
     <div class="col-md-12 container the-big-box">
         <div class="col-md-3 big-container course-div">
             <div class="row">
-                <div class="col-md-6"><h4>Courses availables:</h4></div>
-                <div class="col-md-6">Course Logo</div>
+                <div class="col-md-9"><span class="mediumtitle">Courses availables:</span></div>
+                <div class="col-md-3"><?php echo 
+                                            "<a class='' href='school.php?addCourse=add'><span class='med-gly glyphicon glyphicon-plus-sign'></span></a></div>"; 
+                                      ?>
             </div>
             <div class="row">
                             <div class="courselist">
 <!--ESTE ES EL CASO DE QUE ESTEMOS EN SCHOOL
- -->                                    <?php  include '../03controllers/leftController.php';?>
+ -->                                    <?php  
+                                    include_once '../03controllers/schoolLeftController.php';?>
                             </div>
             </div>
         </div>
         <div class="col-md-3 big-container students-div">
             <div class="row">
-                <div class="col-md-6"><h4>Students:</h4></div>
-                <div class="col-md-6">Student Logo</div>
+                <div class="studentslist">
+                         <?php  include_once '../03controllers/schoolCenterController.php';?>
+                </div>
             </div>
-            <div class="row">Students Data</div>
         </div>
+        
         <div class="col-md-6 big-container extended-container">Main Container
             <?php
-                include_once '../03controllers/courseRightContainerController.php';
+                include_once '../03controllers/schoolMainContainerController.php';
             ?>
         </div>
 <!--         <div>Role: <?php var_dump($_SESSION['userconnected']['role']);        ?></div>

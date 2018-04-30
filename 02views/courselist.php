@@ -9,17 +9,18 @@
     
 //TODO3 HACER QUE SEA UNA TABLA EN LUGAR DE UN DIV COURSEBLOCK
 
-
-    //Showing the array.
-
-
+    //Showing the data.
+    
     foreach ($resultCourses as $row => $column) {
         echo "<div class='courseblock'>";
-        echo  "<img class='maxwith50' src='".$column['courseimage']."' alt='' />";
-
-        echo  "<a href='school.php?idcoursetoshow=".$column['idcourse']."' name='link' id='".$column['idcourse']."' class='coursedata idcourse'>".$column['coursename']."</a>";
-        echo  "<div class='coursedata coursedesc'>Description: ".$column['coursedesc']."</div>";
-        echo "</div>";
+        echo  "<a href='school.php?idcoursetoshow=".$column['idcourse']."' name='link' id='".$column['idcourse']."' class='coursedata idcourse'>
+                <img class='maxwidth100' src='".$column['courseimage']."' alt='' />
+                <span>".$column['coursename']."</span>
+               </a>";
+        echo "</div><hr>";
         }
+    
+    
+    
 
 ?>

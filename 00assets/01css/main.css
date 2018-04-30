@@ -40,8 +40,8 @@
 }
 
 .courseblock{
-    border: 1px blue solid;
-    margin: auto 10px;
+/*     border: 1px blue solid;
+ */    margin: auto 10px;
 }
 
 
@@ -56,13 +56,66 @@
     font-weight: 600;
 }
 
-.maxwith50{
-    max-width: 50px;
+.maxwidth50{
+    max-width: 50px !important; 
 }
 
+.maxwidth100{
+    max-width: 100px;
+}
 
+.maxwidth175{
+    max-width: 175px;
+
+}
+
+.hrCourseStudents{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 3px;
+}
+
+.headeronecourse{
+    /* Este es el titulo en grande del curso seleccionado, Main Container */
+}
 /* TODO CLASSES */
 
 .studentname{
    /*  Es la clase de los alumnos que figuran en un determinado curso */
 }
+
+.coursedata{
+/*     Es el nombre del curso que aparece en el cuadro izquierdo
+ */}
+
+ .row{
+     margin-top: 5px;
+     margin-bottom: 5px;
+ }
+
+ .teamMemberBlock{
+     padding-bottom: 10px;
+ }
+
+ .totalteammembers{
+/*      TExto que muestra el total de miembros
+ */ }
+
+ .roleselection{
+/*      Es parte del formulario de Add
+ */ }
+
+ .mediumtitle{
+     font-size: 125%;
+     font-weight: 700;
+     color: #3479B6;
+
+ }
+
+ .med-gly{
+     font-size: 25px;
+ }
