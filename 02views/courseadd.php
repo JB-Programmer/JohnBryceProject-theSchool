@@ -18,7 +18,7 @@
                 </div>    
                 
                 <div class='form-group row'>
-                   <label for='addcourseimage' class='col-sm-2 col-form-label'>Imagen:</label>
+                   <label for='addcourseimage' class='col-sm-2 col-form-label'>Image (max size: 3Mb):</label>
                    <div class='col-sm-10'><input type='file' name='addcourseimage' size='50' required></div>
                   
                 </div>                   

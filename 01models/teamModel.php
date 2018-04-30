@@ -72,7 +72,6 @@ class TeamTable extends Conexion{
 
         public function updateMemberInfo($id, $name, $role, $phone, $email, $image){
             $query = "UPDATE TEAM SET Name=?, Role=?, Phone=?, email=?, imgsrc=? WHERE id=?";
-            //TODOIMP ANTES DE ESTO PREPARAR IMAGENES
             $result = $this->base->prepare($query);
             $result->execute([$name, $role, $phone, $email, $image, $id]);
                    

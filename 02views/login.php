@@ -33,12 +33,6 @@
 
                             </div>
                             
-
-                             <?php
-//TODO2 Mensaje a mostrar si hay un error en la conexion                               
-                            ?> 
-
-
                         </form>
                     </div>
                     <div class="col-md-4">

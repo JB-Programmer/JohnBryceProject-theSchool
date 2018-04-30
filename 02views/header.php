@@ -12,8 +12,8 @@ include_once('../03controllers/navListController.php');
  -->        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="../00assets/01css/main.css" />
-<!-- TODO3 ADD FAVICON -->
-<!-- TODO3 Cambiar fuentes -->
+        <link rel="shortcut icon" type="image/png" href="../00assets/04images/logo.png"/>
+        <!-- TODO3 Cambiar fuentes -->
 
     </head>
 
@@ -28,23 +28,21 @@ include_once('../03controllers/navListController.php');
                     </a>
                 </li>
                 <li class="<?php navelement(); ?>">
-                        <a class="text-center " href="../02views/school.php">School</a>
-                                  
+                        <a class="text-center navtext" href="../02views/school.php">School</a>                     
                 </li>
                 <li class="<?php navelement(); hidetosale(); ?>"> 
-                    <a class="text-center " href="../02views/administration.php">Administration</a>
+                    <a class="text-center navtext" href="../02views/administration.php">Administration</a>
                 </li>
-<!--            TODO LINK A LA FICHA DEL USUARIO -->
                 <li class="navbar-nav">
-                    <a class="text-center  <?php hiddenclass(); ?>"><?php  echo "User connected: ".$_SESSION['userconnected']['name']?></a>
+                    <a class="navtext text-center  <?php hiddenclass(); ?>"><?php  echo "User connected: ".$_SESSION['userconnected']['name']?></a>
                 </li>
       
                 <li class="navbar-nav">
-                    <a class="text-center bold <?php hiddenclass(); ?>"><?php  echo "<img class='maxwidth50' src='".$_SESSION['userconnected']['imgsrc']."'>"; ?></a>
+                    <a class="navtext text-center bold <?php hiddenclass(); ?>"><?php  echo "<img class='maxwidth50' src='".$_SESSION['userconnected']['imgsrc']."'>"; ?></a>
                 </li>
                                 
                 <li class="navbar-nav">
-                    <a class="text-center  <?php hiddenclass(); ?>" href="../03controllers/logout.php">Log-Out</a>
+                    <a class="navtext text-center  <?php hiddenclass(); ?>" href="../03controllers/logout.php">Log-Out</a>
                 </li>
             </div><!-- /.container-fluid -->
         </nav>

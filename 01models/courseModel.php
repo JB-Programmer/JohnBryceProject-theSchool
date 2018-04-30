@@ -115,8 +115,7 @@ class CourseClass extends Conexion{
     }
 
     public function upd_onecourse($cid, $cnameUpdated, $cdescUpdated){
-
-        //TODO OPCIONAL bind variables
+        //Deberia haberlo asegurado
         $query = "UPDATE courses SET coursename ='$cnameUpdated', coursedesc='$cdescUpdated' WHERE idcourse = $cid";
         $stmt = $this->base->prepare($query);
         $stmt->execute();

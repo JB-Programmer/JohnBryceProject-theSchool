@@ -1,8 +1,8 @@
 <?php
 
-        //This is the router/controller for the main container when exploring/editing course
+        //This is the router/controller for the main container of school.php
 
-        //TODOIMP que los views solo sean visibles si se inicio sesion
+        //Quizas que los views solo sean visibles si se inicio sesion
   if(isset($_GET['idcoursetoshow'])){ // Borre esta segunda parte porque creo que era innecesaria: && $_SESSION['activecourse']!==0
         //Click on a course on right menu, it is the first step to make something with an EXISTING course
         $idcoursetoshow = $_GET['idcoursetoshow'];

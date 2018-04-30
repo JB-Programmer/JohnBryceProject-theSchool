@@ -5,13 +5,6 @@ include_once 'conexion.php';
 
 class StudentsDB extends Conexion{
 
-//Return todos los alumnos
-//Return la ficha de un alumno
-//Editar la ficha de un alumno
-//Borrar un alumno
-//Agregar a un alumno a la academia
-//Agregar un alumno a un curso
-//Borrar a un alumno de un curso
     private $studentId;
     private $studentName;
     private $studentPhone;

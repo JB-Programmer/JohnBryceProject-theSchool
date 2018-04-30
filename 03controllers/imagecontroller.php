@@ -25,7 +25,7 @@
                 $imagename = "../upload/courseimages/".$nombre_imagen;
 
                 return $imagename;
-//TODOSITENGO TIEMPO AVISAR DE ERROR
+            //Quizas avisar de error si no es suficientemente grande
             }else{
                 $imagename = "../upload/courseimages/defaultimage.jpg";
                 return $imagename;

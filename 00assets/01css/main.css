@@ -1,11 +1,18 @@
-
-
-
 /* Vertical center for a row */
 .vert-align {
     vertical-align: middle;
 
 }
+
+.nav .navbar-nav{
+    height: 70px;
+}
+
+.navtext{
+    color: #FF0A0A;
+    font-size: 14px;
+}
+
 
 .hidden{
     display:none;
@@ -15,6 +22,30 @@
     color: #DE5145;
 }
 
+.mainWord{
+    color: #0B4C69;
+    font-weight: 300;
+    font-size: 24px;
+    margin-left: 15px;
+}
+
+.secondaryWords{
+    color: #0B4C69;
+    font-size: 14px;
+}
+
+.td, p {
+    line-height: 80%;
+}
+
+.textAllTeam{
+    margin-left: 15px;
+}
+
+
+.phoneStudentlist{
+    margin-left: 70px;
+}
 
 #coursedescription{
     background-color: blue;
@@ -22,7 +53,8 @@
 
 
 .big-container {
-    border: 3px blue solid;
+    border: 1px #ACACAC solid;
+    padding: 15px;
 
 }
 

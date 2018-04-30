@@ -5,12 +5,13 @@ class administratorsViews {
     
     private $datamember;
 
+    //Show all the team members 
      public function leftBasicView($teamMembers){
         
         echo "<div class='col-md-3 big-container course-div'>
                 <div class='row'>
-                <div class='col-md-6'>Administrators: </div>
-                <div class='col-md-6'><a href='administration.php?addAdmin'>Add Admin</a></div>
+                <div class='col-xs-9 mediumtitle'>Administrators: </div>
+                <div class='col-xs-3'><a href='administration.php?addAdmin'><span class='med-gly glyphicon glyphicon-plus-sign'></span></a></div>
                 </div>
                 <div class='row'>";  
         foreach ($teamMembers as $row => $column) {
@@ -19,12 +20,12 @@ class administratorsViews {
             if($_SESSION['userconnected']['role'] == 'admin'){
                 echo "<div class='teamMemberBlock courseblock'>
                     <table><tr><td><img class='maxwidth100' src='".$column['imgsrc']."' alt='' /></td>
-                    <td><a href='administration.php?idTeamMember=".$column['id']."' name='link' id='".$column['id']."' class=''>".$column['Name'].",<p>".$column['Role']."</p><p> ".$column['Phone']."</p><p>".$column['email']."</p></a></td>
+                    <td class='textAllTeam'><a href='administration.php?idTeamMember=".$column['id']."' name='link' id='".$column['id']."' class='secondaryWords'>".$column['Name'].",<p>".$column['Role']."</p><p> ".$column['Phone']."</p><p>".$column['email']."</p></a></td>
                     </tr></table></div>";
             }elseif($_SESSION['userconnected']['role'] == 'manager' && $column['Role'] !== 'admin'){
                 echo "<div class='teamMemberBlock courseblock'>
                 <table><tr><td><img class='maxwidth100' src='".$column['imgsrc']."' alt='' /></td>
-                <td><a href='administration.php?idTeamMember=".$column['id']."' name='link' id='".$column['id']."' class=''>".$column['Name'].",<p>".$column['Role']."</p><p> ".$column['Phone']."</p><p>".$column['email']."</p></a></td>
+                <td class='textAllTeam'><a href='administration.php?idTeamMember=".$column['id']."' name='link' id='".$column['id']."' class='secondaryWords'>".$column['Name'].",<p>".$column['Role']."</p><p> ".$column['Phone']."</p><p>".$column['email']."</p></a></td>
                 </tr></table></div><hr>";
             }else{
                 echo '';
@@ -32,9 +33,6 @@ class administratorsViews {
         }  
         var_dump($_SESSION['userconnected']);
         echo "</div></div>";
-
-        
-        //include_once('footer.php');
         
     }
 
@@ -78,7 +76,7 @@ class administratorsViews {
                     </div>
                 </div>
                 <div class='form-group row'>
-                    <label for='image' class='col-sm-2 col-form-label'>Imagen:</label>
+                    <label for='image' class='col-sm-2 col-form-label'>Image (max size: 3Mb):</label>
                     <div class='col-sm-10'><input type='file' name='image' size='50'></div>
                 </div>
   
@@ -139,14 +137,7 @@ class administratorsViews {
                     <tr><td><label for='image'>Picture:</label><td>
                         <td><input class='form-control' type='file' name='image' value=''></td>
                     </tr>
-                    
-
-
                     ";
-
-
-
-
         echo "</div></div></form>";
 
 

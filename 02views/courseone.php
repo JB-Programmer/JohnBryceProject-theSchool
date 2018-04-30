@@ -1,10 +1,6 @@
 <?php
 
-              //TODO VIEW FOR THE EDIT COURSEINPUT
-        //echo "This is the course to show: ".$idcoursetoshow;
-
-
-        
+             
             $idcourse = $thecoursetoview['idcourse'];
             $coursename = $thecoursetoview['coursename'];
             $coursedesc = $thecoursetoview['coursedesc'];
@@ -12,7 +8,7 @@
             echo "<form method='get' action='school.php'>";
                 echo "<div><a class='".hidetosalereturn()."' href='school.php?idcoursetoedit=".$idcourse."'>Edit</a></div>";
                 echo  "<img class = 'maxwidth175 centered' src='".$courseimage."' alt='TODOADDALT'>";
-                echo "<span class ='headeronecourse'>Course: ".$coursename.", ".count($studentsOnThisCourse)." Students.</span><br>";
+                echo "<span class ='headeronecourse mainWord'>Course: ".$coursename.", ".count($studentsOnThisCourse)." Students.</span><br>";
                 echo  "<span>Description: ".$coursedesc."</span>";
                 //echo  "<div id='".$idcourse."'>Id: ".$idcourse."</div>";
             echo "</form><br>";

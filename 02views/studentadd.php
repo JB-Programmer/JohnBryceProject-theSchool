@@ -29,7 +29,7 @@
 
                 <tr>
                     <div class='form-group row'>
-                        <label class='col-sm-2'  for='addstdImage'>Image:</label>
+                        <label class='col-sm-2'  for='addstdImage'>Image (max size: 3Mb):</label>
                         <div class='col-sm-8'><input type='file' name='addstdImage'  class='form-control' size='50'></div>
                     </div>
                 </tr>
